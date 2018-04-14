@@ -1,7 +1,10 @@
 /*
- * Create a list that holds all of your cards
+ * Create a list that holds all of 16 cards - so this is the Array
  */
-
+const list = ["fa-anchor","fa-anchor",  "fa-bicycle", "fa-bicycle",  
+            "fa-bolt", "fa-bolt", "fa-bomb", "fa-bomb",  
+            "fa-cube", "fa-cube",  "fa-diamond", "fa-diamond",  
+            "fa-leaf", "fa-leaf", "fa-paper-plane-o", "fa-paper-plane-o"];
 
 /*
  * Display the cards on the page
@@ -36,3 +39,30 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+let shuffledCards = []; // Array for new set of cards
+let viewedCards = []; // Temporary array for viewed cards
+let pairedCards = []; // Array for matched cards
+
+// Timer
+let timerBegin;
+let timerEnd;
+let timerInterval;
+let timerCounter = 0;
+let timerMin = 0;
+
+// Count player's moves
+let movesCount = 0;
+const moveCounterDisplay = document.querySelector('.moves');
+
+// Select the stars
+const stars = document.querySelectorAll(".fa-star");
+const starsList = document.querySelectorAll(".stars li");
+
+// Select all cards and the deck
+const tile = document.querySelectorAll(".deck li");
+const deck = document.querySelector("#deck");
+
+// Select restart buttons on panel and on modal
+const restartBtn = document.querySelector(".restart");
+const restartBtnModal = document.querySelector(".awesome .again")
