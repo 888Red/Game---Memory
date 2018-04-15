@@ -52,8 +52,8 @@ let timerCounter = 0;
 let timerMin = 0;
 
 // Count player's moves
-let movesCount = 0;
-const moveCounterDisplay = document.querySelector('.moves');
+let moves = 0;
+const movesOnPanel = document.querySelector('.moves');
 
 // Select the stars
 const stars = document.querySelectorAll(".fa-star");
@@ -61,8 +61,43 @@ const starsList = document.querySelectorAll(".stars li");
 
 // Select all cards and the deck
 const tile = document.querySelectorAll(".deck li");
-const deck = document.querySelector("#deck");
+const deck = document.querySelector(".deck");
 
-// Select restart buttons on panel and on modal
+// Select restart buttons on score panel and on modal
 const restartBtn = document.querySelector(".restart");
-const restartBtnModal = document.querySelector(".awesome .again")
+const restartBtnModal = document.querySelector(".awesome .again");
+
+/*
+ * Event Listeners
+ */
+
+ // Restart button on score panel and on modal
+ restartBtn.addEventListener("click", function () {
+        newGame();
+    })
+  restartBtnModal.addEventListener("click", function () {
+        document.querySelector(".awesome").className = "awesome hide"; newGame()});
+
+/* When player clicks the card and viewed two cards,
+ * then show the symbols, add card to viewed array and start counting the moves.
+ * Get the playing time and then reset the stars on score panel.
+ */
+
+deck.addEventListener('click', function (evt) {
+
+   if (!(evt.target.className === 'deck') && (viewedCards.length <= 2) && !(evt.target.isClicked === 1) && !(evt.target.localName === 'i')) {
+         showCard(evt);
+         addTileToViewedCards(evt);
+         countMoves();
+
+            //timer on the desk
+
+          if (moves === 1) {
+              timerInterval = setInterval(function () {
+                  OnTimer();
+              }, 1000);
+            }
+           gameTime();
+           resetStarOnPanel();
+        }
+    })
