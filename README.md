@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
+* [Game Mechanics](#gamemechanics)
 * [Contributing](#contributing)
 
 ## Instructions
@@ -12,6 +13,10 @@ The starter project has some HTML and CSS styling to display a static version of
 To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+
+## Game Mechanics
+
+The deck has 16 cards with 8 hidden symbols and the player has to flip the cards 
 
 ## Contributing
 
