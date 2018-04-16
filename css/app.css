@@ -83,6 +83,10 @@ h1 {
   cursor: default;
   background: #aa7ecd;
   font-size: 38px;
+  animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
 }
 
 .deck .card.close {
@@ -138,13 +142,13 @@ h1 {
 
 .awesome {
   z-index: 1000;
-  top: 40%;
+  top: 50%;
   left: 50%;
   border-style: solid;
   border-radius: 10px;
   position: absolute;
   transform: translate(-50%, -50%);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   display: none;
@@ -171,4 +175,34 @@ h1 {
     top: 0;
     opacity: 1;
   }
+}
+
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
 }
