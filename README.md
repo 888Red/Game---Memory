@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Game Mechanics](#game)
+* [Game Mechanics](#game mechanics)
 * [Contributing](#contributing)
 
 ## Instructions
