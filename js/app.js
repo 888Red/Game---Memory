@@ -127,17 +127,20 @@ deck.addEventListener("click", function (event) {
 * Functions for the game
 */
 
+// Show the symbol inside the card
 function showCard(event) {
     event.target.className = "card open show";
     event.target.isClicked = 1;
 }
 
+// Push the clicked cards to the temporary arrays
 function addTileToViewedCards(event) {
     viewedCards.push(event.target.firstElementChild);
     matched(viewedCards);
     mismatched(viewedCards);
 }
 
+// Push the matching cards to matched array and empty temp array
 function matched(array) {
     if (array.length === 2 && array[0].className === array[1].className) {
         array[0].parentNode.className = "card match show";
@@ -147,6 +150,7 @@ function matched(array) {
     }
 }
 
+// One minute timeout when cards do not match
 function mismatched(array) {
     if (array.length === 2 && array[0].className !== array[1].className) {
         setTimeout(function () {
@@ -159,6 +163,7 @@ function mismatched(array) {
     }
 }
 
+// Empty the viewed cards array
 function viewedCardsReset(array) {
     for (let i = 0; i < 2; i++) {
         array.shift();
@@ -166,6 +171,7 @@ function viewedCardsReset(array) {
     return array;
 }
 
+// Make a loop of shuffled cards
 function tilesShuffle(array) {
     let shuffledArray = shuffle(list);
     for (i = 0; i < array.length; i++) {
@@ -173,6 +179,7 @@ function tilesShuffle(array) {
     }
 }
 
+// Starts the timer and show it on the score panel
 function onTimer() {
     let sec;
     timerCounter++;
@@ -193,17 +200,20 @@ function addTimer(number) {
         return number;
     }
 }
+
 /*
 * Score panel
 */
+
 function resetStarOnPanel() {
     if (moves === 30) {
         stars.lastElementChild.style.visibility = "hidden";
-    } else if (moves === 50) {
+    } else if (moves === 40) {
         stars.lastElementChild.previousElementSibling.style.visibility = "hidden";
     }
 }
 
+// Game reset: shuffle cards and score panel
 function newGame() {
     tilesShuffle(tiles);
     for (let card of tiles) {
@@ -221,7 +231,7 @@ function newGame() {
     document.querySelector('.awesome').style.display = "none";
 }
 
-
+// Show number of moves on modal
 function getMoves() {
     let moves = 0;
     return moves;
@@ -234,7 +244,7 @@ function countMoves() {
     movesOnPanel.innerHTML = moves;
 }
 
-// Show modal
+// Show modal after game completion
 
 function showModal() {
     document.querySelector(".lastMove").innerText = document.querySelector(".moves").innerText;
@@ -242,12 +252,10 @@ function showModal() {
     document.querySelector(".totalTime").innerText = document.querySelector('#timer').innerHTML;
 
     setTimeout(function () { document.querySelector(".awesome").style.display = "flex" }, 1000);
-
 }
 
-
 /*
-* When game is over
+* When game is over show the modal and stop the timer
 */
 
 function gameTime() {

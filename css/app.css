@@ -151,7 +151,6 @@ h1 {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  display: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,6 +164,11 @@ h1 {
   animation-timing-function: linear;
   text-align: center;
 }
+
+.awesome.hide {
+	display: none;
+	z-index: 1;
+} 
 
 @keyframes animatetop {
   from {
