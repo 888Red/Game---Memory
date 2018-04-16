@@ -91,7 +91,7 @@ restartBtn.addEventListener("click", function () {
     newGame();
 });
 restartBtnModal.addEventListener("click", function () {
-    document.querySelector(".awesome").className = "awesome hide";
+    document.querySelector(".awesome").style.display = "none";
     newGame();
 });
 
@@ -241,7 +241,7 @@ function showModal() {
     document.querySelector(".starRate").innerText = document.getElementsByClassName("fa-star").length;
     document.querySelector(".totalTime").innerText = document.querySelector('#timer').innerHTML;
 
-    setTimeout(function () { document.querySelector(".awesome").className = "awesome" }, 1000);
+    setTimeout(function () { document.querySelector(".awesome").style.display = "flex" }, 1000);
 
 }
 
