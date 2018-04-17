@@ -16,7 +16,15 @@ For specific, detailed instructions, look at the project instructions in the [Ud
   - 3 stars when 30 moves or less
   - 2 stars when 40 moves or less
   - 1 star when more than 50 moves
-  
+
+![Screenshot](https://github.com/888Red/Game---Memory/blob/master/img/screenshot.JPG)
+
+## Demo
+
+Play it here and test your memory skills. Have fun!
+
+[Let's play!](https://888red.github.io/Game---Memory/)
+
 ## Game Functionality for the JavaScript
 
 * Make a grid with 16 tiles or cards containing 8 pairs of symbols
@@ -30,8 +38,15 @@ For specific, detailed instructions, look at the project instructions in the [Ud
 * The popup screen shows the number of moves, the time and the star rating
 * A new game can be done through the reset button on the score panel or through the play again button
 
-## Contributing
+## Dependencies
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+* Fonts - [Google](https://fonts.google.com/)
+* Icons - [Font Awesome](https://fontawesome.com/)
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Credits and references
+
+* https://calexxxxx.github.io/memory/
+* https://docs.google.com/document/d/14C15Izc71QsQFTMO_VbV1kb_dXzFPy7AfEIMW0fKiW0/edit
+* https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+
+* Udacity Mentors, Student Leaders, my study buddies on Slack and my family --- THANK YOU!

@@ -101,15 +101,11 @@ restartBtnModal.addEventListener("click", function () {
 */
 
 deck.addEventListener("click", function (event) {
-    if (
-        !(event.target.className === "deck") &&
-        viewedCards.length <= 2 &&
-        !(event.target.isClicked === 1) &&
-        !(event.target.localName === "i")
-    ) {
-        showCard(event);
-        addTileToViewedCards(event);
-        countMoves();
+    if (!(event.target.className === "deck") &&
+       (viewedCards.length < 2)) {
+           showCard(event);
+           addTileToViewedCards(event);
+           countMoves();
 
         // Timer on the score panel
 
